@@ -26,7 +26,7 @@ These are the main questions I am looking to answer through the completion of th
 
 ## Data
 ### Structure
-The link to the data set is [here](https://www.kaggle.com/datasets/sidtwr/videogames-sales-dataset/data?select=Video_Games_Sales_as_at_22_Dec_2016.csv). The website contains a csv file of video game sales up until late 2016 with over 16,000 games in the dataset. The number of variables in the dataset is 16. According to the website, the Metacritic scores come from a web scrape of their website. Since Metacritic only reviews games on certain platforms, over half of the games in the dataset are missing values for the critic and user ratings as well as the developer and ESRB rating. 
+The link to the data set is [here](https://www.kaggle.com/datasets/sidtwr/videogames-sales-dataset/data?select=Video_Games_Sales_as_at_22_Dec_2016.csv). The website contains a csv file of video game sales up until late 2016 with over 16,000 games in the dataset. The number of variables in the dataset is 16. According to the website, the Metacritic scores come from a web scrape of their website. Since Metacritic only reviews games on certain platforms, over half of the games in the dataset are missing values for the critic and user ratings as well as the developer and ESRB rating. The variable `Platform` only has one platform listed for a game, even though a majority of these games have been released on multiple platforms. The platform that is listed for each game is the platform with the highest sales for that game, or the only platform that the game was released on.
 
 ### Cleaning
 

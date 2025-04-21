@@ -6,10 +6,10 @@
 ## Introduction
 
 Video Games are a popular form of entertainment enjoyed by billions of
-people worldwide. The games produced range a wide variety of genres and
-are available to a variety of ages where there’s a game for anyone to
-enjoy. The goal of this analysis is to explore a dataset of video game
-sales to better understand the consumer market for video games.
+people worldwide. The games produced range in a wide variety of genres
+and are available to a variety of ages where there’s a game for anyone
+to enjoy. This analysis aims to explore a dataset of video game sales to
+understand the consumer market for video games better.
 
 In pursuit of the stated goal, I will explore the following questions:
 
@@ -22,7 +22,7 @@ In pursuit of the stated goal, I will explore the following questions:
 3.  How is the critic rating related to the number of sales? How does
     the user rating relate?
 
-4.  How does the amount of global sales change over the years? Is this
+4.  How has the amount of global sales changed over the years? Is this
     affected by the release of new gaming systems/platforms?
 
 These are the main questions I am looking to answer through the
@@ -185,16 +185,16 @@ p1 / p2
 
 ![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
-The top graph shows the number of total global sales by genre. The top
-selling genres for video games are Action, Sports, and Shooter. The
-series of graphs on the bottom shows which genres are popular within
-three different regions of the world that have a larger consumer base
-for video games. Customers living in North America and Europe are more
+The top graph shows the number of total global sales by genre. The
+top-selling genres for video games are Action, Sports, and Shooter. The
+graphs on the bottom show which genres are popular within three
+different regions of the world with a more extensive consumer base for
+video games. Customers living in North America and Europe are more
 likely to buy games that fit into the Action, Sports, and Shooter
-genres. The customers living in Japan, however, are more likely to buy
-games that fit into the Role-Playing, Action, and Sports genre. So, if
-you’re trying to appease more to the Japanese gaming market then making
-a Role-Playing game would be a more valuable way to go.
+genres. Customers living in Japan, however, are more likely to purchase
+games that fit into the Role-Playing, Action, and Sports genres. So, if
+you’re trying to appease the Japanese gaming market more, making a
+Role-Playing game would be a more valuable way to go.
 
 #### How is the ESRB rating related to the number of sales? Does the rating affect the amount of sales?
 
@@ -208,15 +208,15 @@ The graph above depicts the average total global sales by the ESRB
 rating of a game. There was an issue with the graph where it shows that
 games rated AO are more likely to make a lot by over twice as much as
 any other rating, but there’s only one instance of a game with that
-rating in the dataset so it’s not reliable to make that claim. I decided
-to remove that instance of the dataset to better asses the sales by
-rating. Games that are rated M for mature are more likely to sell more
-units on average than any other rating. I predicted that games rated E
-would sell more on average since they’re available to a wider
-demographic, but given that consumers are more likely to buy action and
-shooter video games the games that are rated M are more likely to fit
-into those genres. Games rated E have the second most sales on average
-though, and this is probably due to the rating of sports video games.
+rating in the dataset, so it’s not reliable to make that claim. I
+decided to remove that instance of the dataset to better asses the sales
+by rating. Games rated M for mature are more likely to sell more units
+on average than any other rating. I predicted that games rated E would
+sell more on average since they’re available to a broader demographic,
+but given that consumers are more likely to buy action and shooter video
+games, the games that are rated M are more likely to fit into those
+genres. However, games rated E have the second most average sales due to
+the rating of sports video games and the broader age demographic appeal.
 
 #### How is the critic rating related to the number of sales? How does the user rating relate?
 
@@ -233,11 +233,11 @@ critic score for a game and the number of global sales. The graph on the
 right depicts the relationship between the average user score for a game
 and the number of global sales. I predicted that the average user score
 would have a higher positive correlation to game sales, but the average
-critic score has the higher positive correlation. So, consumers are more
-likely to purchase a video game based on the critic ratings rather than
-the user ratings.
+critic score has a higher positive correlation. This entails that the
+critic score is an essential factor when consumers decide which video
+games to buy.
 
-#### How does the amount of global sales change over the years? Is this affected by the release of new gaming systems/platforms?
+#### How has the amount of global sales changed over the years? Is this affected by the release of new gaming systems/platforms?
 
 ``` r
 game_sales %>% filter(!is.na(Year_of_Release), Year_of_Release %in% c(1980:2016)) %>% group_by(Year_of_Release) %>% summarise(Total_Global_Sales = sum(Global_Sales)) %>% ggplot(aes(x = Year_of_Release, y = Total_Global_Sales)) + geom_line() + geom_point() + labs(title = "Total Global Sales by the Year of Release", x = "Year of Release", y = "Total Global Sales (in millions of units)")
@@ -248,50 +248,49 @@ game_sales %>% filter(!is.na(Year_of_Release), Year_of_Release %in% c(1980:2016)
 The graph above depicts the total global sales by the year the game was
 released. One of the issues with this graph is that the highest year of
 release is 2016, so the closer a game was released towards the end of
-2016 then the lower their sales might be since they haven’t had as much
-time in the market compared to other games. The graph still does show
-that there was a boom in video game sales starting after 1995. The
-increase of sales in 1995 can be contributed to the release of the first
-PlayStation gaming system followed by the release of the Nintendo 64 in
-1996. The increase in sales after 2000 can be contributed to the release
-of the PlayStation 2 in 2000, the Xbox in 2001, and the Nintendo
-GameCube in 2001. The increase in sales that continues into 2005 and
-after can be contributed to the release of PlayStation 3 in 2006, the
-Xbox 360 in 2005, and the Wii in 2006. The subsequent releases of the
-Xbox One and the PlayStation 4 in the mid 2010’s has also boosted gaming
-sales worldwide, but sadly the dataset is not that recent to show that
-result
+2016, the lower its sales might be since they haven’t had as much time
+in the market as other games. The graph still does show that there was a
+boom in video game sales starting after 1995. The sales increase in 1995
+can be attributed to the release of the first PlayStation gaming system,
+followed by the release of the Nintendo 64 in 1996. The increase in
+sales after 2000 can be attributed to the release of the PlayStation 2
+in 2000, the Xbox in 2001, and the Nintendo GameCube in 2001. The
+increase in sales that continued into 2005 and after can be attributed
+to the release of the PlayStation 3 in 2006, the Xbox 360 in 2005, and
+the Wii in 2006. The subsequent releases of the Xbox One and the
+PlayStation 4 in the mid-2010s have also boosted gaming sales worldwide,
+but sadly, the dataset is not that recent to show that result.
 
 ## Conclusion
 
-In conclusion, my analysis on the consumer market for video games has
-shown several factors that influence the market. One of the main ways to
-increase the chances of a high selling game is to make a game that
-appeases to want customers want. As shown in our analysis the top genres
-that are sold are action, sports, and shooter games. Making games that
-fit into one, or multiple, of these categories will increase the chances
-of selling more units for that game. Another factor is the ESRB rating
-of the game. While games that are rated E can sell well due to being
-open to a wider age demographic, games that are rated M appeal more to
-customers since that’s what action and shooter game ratings tend to fit
-into. There’s also the importance of how critics react to the game. In
-order to increase the amount of units sold, companies that allow critics
-to play their games early in hopes for good reviews will see an increase
-in the amount of units sold when the game is available on the market.
-Sometimes the timing of the release also matters. Releasing a game on a
+In conclusion, my analysis of the consumer market for video games has
+shown several factors influencing the market. One of the main ways to
+increase the chances of a high-selling game is to make a game that
+appeases what customers want. My analysis shows that action, sports, and
+shooter games are the top genres sold. Making games that fit into one or
+multiple of these categories will increase the chances of selling more
+units for that game. Another factor is the ESRB rating of the game.
+While games that are rated E can sell well due to being open to a
+broader age demographic, games that are rated M appeal more to customers
+since that’s what action and shooter game ratings tend to fit into.
+There’s also the importance of how critics react to the game. In order
+to increase the number of units sold, companies that allow critics to
+play their games early in hopes of good reviews will see an increase in
+the number of units sold when the game is available on the market.
+Sometimes, the timing of the release also matters. Releasing a game on a
 new gaming system will also increase sales since newer gaming systems
-are able to run bigger games with better graphics, and since they’re new
+can run bigger games with better graphics, and since they’re new,
 customers will be looking for new games that are only available for
 these gaming systems.
 
 Further research on the gaming platform is needed. Since this dataset
-only contains data as late as December, 2016 it doesn’t properly show
+only contains data as late as December 2016, it doesn’t properly show
 the popularity of gaming systems like the PlayStation 4 or Xbox One.
-More recent research would also be useful in general to see if customers
-are still purchasing the newer gaming systems like the PlayStation 5 and
-the Xbox Series X, or if they’re starting to move more towards video
-games on the PC. Lastly, there were many variables missing when it came
-to the critic and user scores as well as the ESRB rating, so it would be
-interesting if more analysis could be done for comparing the critic and
-user scores for more video games and from different companies that also
-have video game reviews.
+More recent research would also be useful to see if customers are still
+purchasing the newer gaming systems like the PlayStation 5 and the Xbox
+Series X or if they’re starting to move more towards video games on the
+PC. Lastly, many variables were missing when it came to the critic and
+user scores as well as the ESRB rating, so it would be interesting if
+more analysis could be done for comparing the critic and user scores for
+more video games and from different companies that also have video game
+reviews.
